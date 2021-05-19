@@ -1,0 +1,192 @@
+:root {
+    --vermelho: #e50914;
+    --preto: #141414;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--preto);
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+header .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    margin-left: 10px;
+    color: var(--vermelho);
+    font-family: "Arial Black";
+    font-size: 40px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #AAA;
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+header nav a:hover {
+    color: #fff;
+}
+
+.filme-principal {
+    font-size: 18px;
+    background: linear-gradient(rgba(0,0,0,.40), rgba(0,0,0,.50)100%), url("/Clone-Netflix/img/capa-sabrina.jpg");
+
+    height: 400px;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.filme-principal .descricao {
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+.filme-principal .titulo {
+    margin-top: 5%;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.botao {
+    background-color: rgba(0,0,0,.60);
+    border: none;
+    color: white;
+
+    padding: 15px 30px;
+    margin-right: 10px;
+    font-size: 14px;
+
+    cursor: pointer;
+    transition: 0.5s ease all;
+}
+
+.botao:hover {
+    background: linear-gradient(rgba(255, 0, 0,.9), rgba(223, 22, 55, 0.8)50%);
+    color: white;
+    box-shadow: 2rem solid rgba(255, 255, 255, 0.8); 
+}
+
+.botoes i {
+    margin-right: 8px;
+}
+
+.container {
+    margin-left: 20px;
+}
+
+.filme-principal .container {
+    width: 70%;
+}
+
+.box-filme {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.box-filme {
+    margin-top: 8px;
+}
+
+
+/* POPUP */
+.escurecer-modal {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color:rgba(0,0,0,.60);
+    z-index: 99997;
+    display: none;
+}
+
+.modal {
+    background: linear-gradient( rgb(211, 204, 204),rgba(122, 122, 122)400% );
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+    box-shadow: 0 0 0.5em rgb(252, 252, 252);
+    display: none;
+    animation: showin 1s ease-in-out;
+}
+
+.text-modal * {
+    margin-top: 40px;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    max-width: 450px;
+    max-height: 445px;
+    overflow: hidden;
+}
+
+.text-modal p {
+    color: black;
+    text-align: center;
+}
+
+.fechar {  
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 22px;
+    line-height: 29px;
+    font-family: Verdana, Tahoma, sans-serif;
+    float: right;
+    cursor: pointer;
+}
+
+
+@keyframes escurecendo {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes showin {
+    from {
+        opacity: 0;
+        top: 25%;
+        transform: translate(-50%, -50%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes showout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        top: 25%;
+    }
+}
+
